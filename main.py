@@ -9,8 +9,8 @@ from sys import argv
 def toss_coin():
     circuit = init_circuit()
     print('Quantum Circuit:')
-    print(circuit.data[0].qasm())
-    print(circuit.data[1].qasm())
+    for i in range(len(circuit.data)):
+        print(circuit.data[i].qasm())
 
     backend = get_backend(True)
     print('Backend: ' + backend.name())
